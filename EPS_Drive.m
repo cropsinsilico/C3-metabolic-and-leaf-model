@@ -32,7 +32,7 @@ global Tp;
 
 CO2_Env=CO2input;
 CO2_cond = CO2_Env/(3 * 10^4);
-LI=lightinput/30;
+LI=lightinput/30;%LI: mmol L-1
 Tp=Tempinput;
 
 

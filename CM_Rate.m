@@ -8,6 +8,7 @@ global GRNC;
 global GRNT;
 global Tp;
 global pcfactor;
+global alpha1 alpha2;
 Vfactor1=1;
 Vfactor2=1;
 Vfactor3=1;
@@ -293,9 +294,9 @@ PsV16	=	V16	;	%	16	ATP synthase	ADP+Pi<->ATP
 PsV21	=	V21*Vfactor21	;	%	21	Hexose phosphate isomerase	F6P<->G6P
 PsV22	=	V22	;	%	22	Phosphoglucomutase	G6P<->G1P
 PsV23_0	=	V23*Vfactor23*Vf_T23;%	23	ADP-glucose pyrophosphorylase and	ADPG+Gn<->G(n+1)+ADP
-PsV31	=	V31 ;	%	31	Phosphate translocator	DHAPi<->DHAPo
-PsV32	=	V32	;	%	32	Phosphate translocator	PGAi<->PGAo
-PsV33	=	V33	;	%	33	Phosphate translocator	GAPi<->GAPo
+PsV31	=	V31 * alpha2;	%	31	Phosphate translocator	DHAPi<->DHAPo
+PsV32	=	V32 * alpha2;	%	32	Phosphate translocator	PGAi<->PGAo
+PsV33	=	V33 * alpha2;	%	33	Phosphate translocator	GAPi<->GAPo
 
 
 global V111;
