@@ -3,8 +3,8 @@ global GRNC;
 global GRNT;
 global pcfactor;
 global alpha1 alpha2;
-alpha1 = 0.87;
-alpha2 = 1.325;
+% alpha1 = 0.87;
+% alpha2 = 1.325;
 
 GRN_data=input1*pcfactor;
 

@@ -625,6 +625,9 @@ v13 = PsV13 * (ATP * Ru5P-ADP * RuBP/PsKE13)/((ATP*(1+ADP/PsKI134) + PsKM132*(1+
 
 
 I2=LI*alfa*(1-fc)/2;
+%disp(["LI is ",num2str(LI)]);
+%disp(["alfa*(1-fc) ",num2str(alfa*(1-fc))]);
+
 J=(I2+Jmax-sqrt((I2+Jmax)^2-4*Theta*I2*Jmax))/(2*Theta);
 v16 = min(beta*J,PsV16* (ADP * Pi-ATP/PsKE16)/(PsKM161*PsKM162 * (1+ADP/PsKM161 + Pi/PsKM162 + ATP/PsKM163 + ADP * Pi /(PsKM161 * PsKM162))));
 %v16o = PsV16* (ADP * Pi-ATP/PsKE16)/(PsKM161*PsKM162 * (1+ADP/PsKM161 + Pi/PsKM162 + ATP/PsKM163 + ADP * Pi /(PsKM161 * PsKM162)));

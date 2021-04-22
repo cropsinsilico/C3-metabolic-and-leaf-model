@@ -27,7 +27,7 @@ global PS_C_CA;             %   Global constant for the total adenylates
 global PS_C_CP;             %   Global constant for the total phosphate
 global PS_C_CN;             %   Global constant for the total NADP+NADPH
 
-PS_C_CP	= 25;   
+PS_C_CP	= 22;   
 PS_C_CA	=1.5;          
 PS_C_CN	=1;
 

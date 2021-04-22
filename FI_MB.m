@@ -29,14 +29,14 @@
 % 2) The computation of the mass balance equations
 
 function FI_mb = FI_Mb(t,FI_Con,FI_Param)
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %   Calculate the rates first   %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %global GLight;
 global LI;
+global light_scaler;
 %fini = Condition (t);
-light = LI*30;
+light = LI*30*light_scaler;
 
 FI_Param(1) = light;
 

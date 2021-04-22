@@ -208,8 +208,8 @@ global ChlT2;   % total Chl in PSII
 global ChlPSI;  % total Chl in PSI
 % Iin is the total absorbed light
  
-Vinc    =   Iin * ChlPSI/(ChlT2+ChlPSI)* 95/184;    %   PPFD absorbed by core antenna of PSI    Unit: micromole m-2 leaf area per second
-Vinp    =   Iin * ChlPSI/(ChlT2+ChlPSI)* 105/184;   %   PPFD absorbed by peripheral antenna of PSI  Unit: micromole m-2 leaf area per second
+Vinc    =   Iin * ChlPSI/(ChlT2+ChlPSI)* 95/200;    %   PPFD absorbed by core antenna of PSI    Unit: micromole m-2 leaf area per second
+Vinp    =   Iin * ChlPSI/(ChlT2+ChlPSI)* 105/200;   %   PPFD absorbed by peripheral antenna of PSI  Unit: micromole m-2 leaf area per second
   
 % Vinc	=	Iin * (200/(200+290))*80/200	;	%	PPFD absorbed by core antenna of PSI	Unit: micromole m-2 leaf area per second
 % Vinp	=	Iin * (200/(200+290))*120/200	;	%	PPFD absorbed by peripheral antenna of PSI	Unit: micromole m-2 leaf area per second
