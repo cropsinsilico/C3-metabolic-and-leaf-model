@@ -25,7 +25,7 @@ function fini = cdn (t)
 global RUBISCOTOTAL;        % Total concentration of Rubisco.
 global RUBISCOMETHOD;       % The method for calculation of Rubisco catalyzed reaction
 RUBISCOTOTAL = 3;           
-RUBISCOMETHOD = 2;          % 1: Use enzyme concentration for calculation
+RUBISCOMETHOD = 1;          % 1: Use enzyme concentration for calculation
                             % 2: Use the michaelis menton and enzyme concentration together for calculation
 global VolRatioStCyto;
 VolRatioStCyto = 1;
