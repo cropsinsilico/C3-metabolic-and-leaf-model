@@ -493,7 +493,7 @@ ATc = SUCS_Pool	(	1	)	;
 UTc = SUCS_Pool	(	2	)		;
 PTc = SUCS_Pool	(	3	)		;
 % Setting the initial concentrations 
-
+%Calvin Cycle
 RuBP	=	CM_Con(1)	;
 PGA	    =	CM_Con(2)	;
 DPGA	=	CM_Con(3)	;
@@ -509,6 +509,7 @@ O2	    =	CM_Con(12)	;
 HexP    =   CM_Con(13);
 PenP    =   CM_Con(14);  
 
+%photo respiration
 Gcea = CM_Con(15);
 Gca = CM_Con(16);
 Pga = PGA;
@@ -853,6 +854,10 @@ if RUBISCOMETHOD ==2            % Using michelies and enzyme information
         PrV111t = PrV111*Rubp/(Rubp+PrKR);
     end
     v111 = PrV111t * O/(O+PrKO*(1+C/PrKC));
+
+    if Rubp < RUBISCOTOTAL
+        v111 = v111 * Rubp/RUBISCOTOTAL;
+    end
     
 elseif RUBISCOMETHOD==1
     v111 = PrV111 * O/(O+PrKO*(1+C/PrKC));

@@ -83,7 +83,7 @@ vatpf   =   CM_Vel(41);    %	ATP synthesis rate
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 tmp = zeros(23,1);
 % RuBP
-tmp(1) = v13-v1-v111;
+tmp(1) = v13-v1-v111;%v13: generation; v1: RUBP+CO2; v111: RUBP+O2
 % PGA;
 tmp(2) = 2*v1-v2-v32 + v113 + v111;
 % DPGA
