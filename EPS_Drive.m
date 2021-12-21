@@ -21,7 +21,7 @@
 %    along with this program.  If not, see <http://www.gnu.org/licenses/>.
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-function PhotosynthesisRate=EPS_Drive(lightinput,CO2input,Tempinput)
+function PhotosynthesisRate=EPS_Drive(lightinput,CO2input,Tempinput,k1,k2,k3)
 
 Begin = 1;
 fin = SYSInitial(Begin);
@@ -42,9 +42,10 @@ global fc;
 global Theta;
 global beta;
 %Jmax=0.180/30*1000;
-alfa=0.85;
-fc=0.15;
-Theta=0.7;
+%alfa=0.85;
+%fc=0.15;
+%Theta=0.7;
+Theta=0.95;%Yufeng: match Farquhar Matlab
 beta=0.7519;
 
 Begin = 1;
@@ -115,7 +116,7 @@ CO2A = zeros(5,1);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-[Tt,d] = ode15s(@EPS_mb,[0,time],EPS_Con,options1,BF_Param, FI_Param, PS_PR_Param, Sucs_Param);
+[Tt,d] = ode15s(@EPS_mb,[0,time],EPS_Con,options1,BF_Param, FI_Param, PS_PR_Param, Sucs_Param,k1,k2,k3);
 
 %   The following section deals with the data output of the program.
 %GraphSuc = EPS_Graph(Tt,d);    

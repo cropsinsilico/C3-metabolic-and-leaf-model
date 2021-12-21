@@ -1,4 +1,4 @@
-function Arate=EPS_Drive_GRNs(input1,CO2i,PPFDi,Tempi,Gc,GT,Einput)
+function Arate=EPS_Drive_GRNs(input1,CO2i,PPFDi,Tempi,Gc,GT,Einput,k1,k2,k3)
 global GRNC;
 global GRNT;
 global pcfactor;
@@ -46,5 +46,5 @@ global VfactorT;
 
 VfactorC=GRN_data(1:33);
 
-Arate=EPS_Drive(Liin,CO2in,Tpin);
+Arate=EPS_Drive(Liin,CO2in,Tpin,k1,k2,k3);
 end

@@ -1,4 +1,4 @@
-function CMr = CM_Rate(t,CM_Con, SUCS_Param)
+function CMr = CM_Rate(t,CM_Con, SUCS_Param,k1,k2,k3)
 global PS2EPS_V16; 
 global PS2EPS_v3;
 global CO2_cond;
@@ -371,7 +371,8 @@ Q10_56=2;
 Q10_57=2;
 Q10_58=2;
 
-Ru_Act=-3E-05*Tp^3 + 0.0013*Tp^2 - 0.0106*Tp + 0.8839;%Rubisco activition state
+% k1 = -3E-05;k2 = 0.0013;k3=0.0106*2;k4=0.8839;
+Ru_Act = k1*Tp^2 - k2*Tp + k3;%Rubisco activition state
 PsV1 =PsV1_0*Ru_Act*Q10_1^((Tp-25)/10);
 PsV2 =PsV2_0*Q10_2^((Tp-25)/10);
 PsV3 =PsV3_0*Q10_3^((Tp-25)/10);
@@ -626,8 +627,6 @@ v13 = PsV13 * (ATP * Ru5P-ADP * RuBP/PsKE13)/((ATP*(1+ADP/PsKI134) + PsKM132*(1+
 
 
 I2=LI*alfa*(1-fc)/2;
-%disp(["LI is ",num2str(LI)]);
-%disp(["alfa*(1-fc) ",num2str(alfa*(1-fc))]);
 
 J=(I2+Jmax-sqrt((I2+Jmax)^2-4*Theta*I2*Jmax))/(2*Theta);
 v16 = min(beta*J,PsV16* (ADP * Pi-ATP/PsKE16)/(PsKM161*PsKM162 * (1+ADP/PsKM161 + Pi/PsKM162 + ATP/PsKM163 + ADP * Pi /(PsKM161 * PsKM162))));
