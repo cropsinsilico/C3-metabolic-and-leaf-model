@@ -373,17 +373,23 @@ Q10_58=2;
 
 % k1 = -3E-05;k2 = 0.0013;k3=0.0106;k4=0.8839;
 Ru_Act = k1*Tp^3 + k2*Tp^2 - k3*Tp + k4;%Rubisco activition state
+scaler = 2.0^((Tp-25)/10);
+if Tp>25
+scaler2 = 1;
+else
+scaler2 = 1;
+end
 PsV1 =PsV1_0*Ru_Act*Q10_1^((Tp-25)/10);
-PsV2 =PsV2_0*Q10_2^((Tp-25)/10);
-PsV3 =PsV3_0*Q10_3^((Tp-25)/10);
-PsV5 =PsV5_0*Q10_5^((Tp-25)/10);
-PsV6 =PsV6_0*Q10_6^((Tp-25)/10);
-PsV7 =PsV7_0*Q10_7^((Tp-25)/10);
-PsV8 =PsV8_0*Q10_8^((Tp-25)/10);
-PsV9 =PsV9_0*Q10_9^((Tp-25)/10);
-PsV10=PsV10_0*Q10_10^((Tp-25)/10);
-PsV13=PsV13_0*Q10_13^((Tp-25)/10);
-PsV23=PsV23_0*Q10_23^((Tp-25)/10);
+PsV2 =PsV2_0*Q10_2^((Tp-25)/10)*scaler*scaler2;
+PsV3 =PsV3_0*Q10_3^((Tp-25)/10)*scaler*scaler2;
+PsV5 =PsV5_0*Q10_5^((Tp-25)/10)*scaler*scaler2;
+PsV6 =PsV6_0*Q10_6^((Tp-25)/10)*scaler*scaler2;
+PsV7 =PsV7_0*Q10_7^((Tp-25)/10)*scaler*scaler2;
+PsV8 =PsV8_0*Q10_8^((Tp-25)/10)*scaler*scaler2;
+PsV9 =PsV9_0*Q10_9^((Tp-25)/10)*scaler*scaler2;
+PsV10=PsV10_0*Q10_10^((Tp-25)/10)*scaler*scaler2;
+PsV13=PsV13_0*Q10_13^((Tp-25)/10)*scaler*scaler2;
+PsV23=PsV23_0*Q10_23^((Tp-25)/10)*scaler*scaler2;
 PrV112=PrV112_0*Q10_112^((Tp-25)/10);
 PrV113=PrV113_0*Q10_113^((Tp-25)/10);
 PrV121=PrV121_0*Q10_121^((Tp-25)/10);
@@ -399,7 +405,6 @@ SUCSV57=SUCSV57_0*Q10_57^((Tp-25)/10);
 SUCSV58=SUCSV58_0*Q10_58^((Tp-25)/10);
 
 PrV111= PsV1* 0.24;
-
 
 
 
