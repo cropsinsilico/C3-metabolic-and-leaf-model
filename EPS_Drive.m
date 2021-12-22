@@ -21,7 +21,7 @@
 %    along with this program.  If not, see <http://www.gnu.org/licenses/>.
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-function PhotosynthesisRate=EPS_Drive(lightinput,CO2input,Tempinput,k1,k2,k3)
+function PhotosynthesisRate=EPS_Drive(lightinput,CO2input,Tempinput,k1,k2,k3,k4)
 
 Begin = 1;
 fin = SYSInitial(Begin);
@@ -116,7 +116,7 @@ CO2A = zeros(5,1);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-[Tt,d] = ode15s(@EPS_mb,[0,time],EPS_Con,options1,BF_Param, FI_Param, PS_PR_Param, Sucs_Param,k1,k2,k3);
+[Tt,d] = ode15s(@EPS_mb,[0,time],EPS_Con,options1,BF_Param, FI_Param, PS_PR_Param, Sucs_Param,k1,k2,k3,k4);
 
 %   The following section deals with the data output of the program.
 %GraphSuc = EPS_Graph(Tt,d);    

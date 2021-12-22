@@ -26,7 +26,7 @@
 
 % EPS_mb.m  This model includes the mass balance equations for the full model of the light reactions.
 
-function EPS_DYDT = EPS_mb(t, EPS_Con, BF_Param, FI_Param, PS_PR_Param, Sucs_Param,k1,k2,k3)
+function EPS_DYDT = EPS_mb(t, EPS_Con, BF_Param, FI_Param, PS_PR_Param, Sucs_Param,k1,k2,k3,k4)
 
 % Try out one new way of calculating the mass balance equation.
 % In this new way, all the previous calcuations of mass balance equation is preserved and only the necessary changes are made.
@@ -45,7 +45,7 @@ end
 % the condition are is distributed into the separate mb file. 
 
 % Step II, Calculate the PYPT using the existing modules.
-CM_DYDT = CM_mb(t,CMs,PS_PR_Param, Sucs_Param,k1,k2,k3);
+CM_DYDT = CM_mb(t,CMs,PS_PR_Param, Sucs_Param,k1,k2,k3,k4);
 FIBF_DYDT = FIBF_MB(t, FIBF_Con, BF_Param, FI_Param);
 
 % Step III: Calculate the mass balanec equation for the EPS model. This basically need to make sure that the variables 

@@ -1,4 +1,4 @@
-function CMr = CM_Rate(t,CM_Con, SUCS_Param,k1,k2,k3)
+function CMr = CM_Rate(t,CM_Con, SUCS_Param,k1,k2,k3,k4)
 global PS2EPS_V16; 
 global PS2EPS_v3;
 global CO2_cond;
@@ -371,8 +371,8 @@ Q10_56=2;
 Q10_57=2;
 Q10_58=2;
 
-% k1 = -3E-05;k2 = 0.0013;k3=0.0106*2;k4=0.8839;
-Ru_Act = k1*Tp^2 - k2*Tp + k3;%Rubisco activition state
+% k1 = -3E-05;k2 = 0.0013;k3=0.0106;k4=0.8839;
+Ru_Act = k1*Tp^3 + k2*Tp^2 - k3*Tp + k4;%Rubisco activition state
 PsV1 =PsV1_0*Ru_Act*Q10_1^((Tp-25)/10);
 PsV2 =PsV2_0*Q10_2^((Tp-25)/10);
 PsV3 =PsV3_0*Q10_3^((Tp-25)/10);
