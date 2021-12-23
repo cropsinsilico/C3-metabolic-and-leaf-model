@@ -18,7 +18,7 @@
 
 
 % CM_mb.m  This model includes the mass balance equations for the full model of the carbon metabolism inlcuding SUCS and PSPR
-function CM_DYDT = CM_mb(t, CM_Con, PS_PR_Param, SUCS_Param,k1,k2,k3,k4)
+function CM_DYDT = CM_mb(t, CM_Con, PS_PR_Param, SUCS_Param,k1,k2,k3,k4,c1,c2,c3)
 
 global GLight;
 fini = cdn (t);
@@ -30,7 +30,7 @@ SUCS_Param(1) = light;
 %   Calculate the rates    %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-CM_Vel = CM_Rate(t, CM_Con, SUCS_Param,k1,k2,k3,k4);
+CM_Vel = CM_Rate(t, CM_Con, SUCS_Param,k1,k2,k3,k4,c1,c2,c3);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %   Get the rate of different reactions%

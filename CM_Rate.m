@@ -1,4 +1,4 @@
-function CMr = CM_Rate(t,CM_Con, SUCS_Param,k1,k2,k3,k4)
+function CMr = CM_Rate(t,CM_Con, SUCS_Param,k1,k2,k3,k4,c1,c2,c3)
 global PS2EPS_V16; 
 global PS2EPS_v3;
 global CO2_cond;
@@ -375,34 +375,36 @@ Q10_58=2;
 Ru_Act = k1*Tp^3 + k2*Tp^2 - k3*Tp + k4;%Rubisco activition state
 scaler = 2.0^((Tp-25)/10);
 if Tp>25
-scaler2 = 1;
+scaler1 = c1;
+scaler2 = c2;
+scaler3 = c3;
 else
-scaler2 = 1;
+scaler1 = 1;
 end
-PsV1 =PsV1_0*Ru_Act*Q10_1^((Tp-25)/10);
-PsV2 =PsV2_0*Q10_2^((Tp-25)/10)*scaler*scaler2;
-PsV3 =PsV3_0*Q10_3^((Tp-25)/10)*scaler*scaler2;
-PsV5 =PsV5_0*Q10_5^((Tp-25)/10)*scaler*scaler2;
-PsV6 =PsV6_0*Q10_6^((Tp-25)/10)*scaler*scaler2;
-PsV7 =PsV7_0*Q10_7^((Tp-25)/10)*scaler*scaler2;
-PsV8 =PsV8_0*Q10_8^((Tp-25)/10)*scaler*scaler2;
-PsV9 =PsV9_0*Q10_9^((Tp-25)/10)*scaler*scaler2;
-PsV10=PsV10_0*Q10_10^((Tp-25)/10)*scaler*scaler2;
-PsV13=PsV13_0*Q10_13^((Tp-25)/10)*scaler*scaler2;
-PsV23=PsV23_0*Q10_23^((Tp-25)/10)*scaler*scaler2;
-PrV112=PrV112_0*Q10_112^((Tp-25)/10);
-PrV113=PrV113_0*Q10_113^((Tp-25)/10);
-PrV121=PrV121_0*Q10_121^((Tp-25)/10);
-PrV122=PrV122_0*Q10_122^((Tp-25)/10);
-PrV123=PrV123_0*Q10_123^((Tp-25)/10);
-PrV124=PrV124_0*Q10_124^((Tp-25)/10);
-PrV131=PrV131_0*Q10_131^((Tp-25)/10);
-SUCSV51=SUCSV51_0*Q10_51^((Tp-25)/10);
-SUCSV52=SUCSV52_0*Q10_52^((Tp-25)/10);
-SUCSV55=SUCSV55_0*Q10_55^((Tp-25)/10);
-SUCSV56=SUCSV56_0*Q10_56^((Tp-25)/10);
-SUCSV57=SUCSV57_0*Q10_57^((Tp-25)/10);
-SUCSV58=SUCSV58_0*Q10_58^((Tp-25)/10);
+PsV1 =PsV1_0*Ru_Act*Q10_1^((Tp-25)/10)*scaler1;
+PsV2 =PsV2_0*Q10_2^((Tp-25)/10)*scaler*scaler1;
+PsV3 =PsV3_0*Q10_3^((Tp-25)/10)*scaler*scaler1;
+PsV5 =PsV5_0*Q10_5^((Tp-25)/10)*scaler*scaler1;
+PsV6 =PsV6_0*Q10_6^((Tp-25)/10)*scaler*scaler1;
+PsV7 =PsV7_0*Q10_7^((Tp-25)/10)*scaler*scaler1;
+PsV8 =PsV8_0*Q10_8^((Tp-25)/10)*scaler*scaler1;
+PsV9 =PsV9_0*Q10_9^((Tp-25)/10)*scaler*scaler1;
+PsV10=PsV10_0*Q10_10^((Tp-25)/10)*scaler*scaler1;
+PsV13=PsV13_0*Q10_13^((Tp-25)/10)*scaler*scaler1;
+PsV23=PsV23_0*Q10_23^((Tp-25)/10)*scaler*scaler1;
+PrV112=PrV112_0*Q10_112^((Tp-25)/10)*scaler2;
+PrV113=PrV113_0*Q10_113^((Tp-25)/10)*scaler2;
+PrV121=PrV121_0*Q10_121^((Tp-25)/10)*scaler2;
+PrV122=PrV122_0*Q10_122^((Tp-25)/10)*scaler2;
+PrV123=PrV123_0*Q10_123^((Tp-25)/10)*scaler2;
+PrV124=PrV124_0*Q10_124^((Tp-25)/10)*scaler2;
+PrV131=PrV131_0*Q10_131^((Tp-25)/10)*scaler2;
+SUCSV51=SUCSV51_0*Q10_51^((Tp-25)/10)*scaler3;
+SUCSV52=SUCSV52_0*Q10_52^((Tp-25)/10)*scaler3;
+SUCSV55=SUCSV55_0*Q10_55^((Tp-25)/10)*scaler3;
+SUCSV56=SUCSV56_0*Q10_56^((Tp-25)/10)*scaler3;
+SUCSV57=SUCSV57_0*Q10_57^((Tp-25)/10)*scaler3;
+SUCSV58=SUCSV58_0*Q10_58^((Tp-25)/10)*scaler3;
 
 PrV111= PsV1* 0.24;
 
