@@ -373,8 +373,8 @@ Q10_58=2;
 
 % k1 = -3E-05;k2 = 0.0013;k3=0.0106;k4=0.8839;
 Ru_Act = k1*Tp^3 + k2*Tp^2 - k3*Tp + k4;%Rubisco activition state
-scaler = 2.0^((Tp-25)/10);
-if Tp>25
+scaler = 1.5^((Tp-25)/10);
+if Tp<250
 scaler1 = c1;
 scaler2 = c2;
 scaler3 = c3;
