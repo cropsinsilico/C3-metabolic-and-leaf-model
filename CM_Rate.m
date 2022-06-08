@@ -178,7 +178,7 @@ dHa_o=23.72;
 PsKM11_0	=	0.0097;
 PsKM12_0	=	0.244;		%	O2	1	RuBP+CO2->2PGA  0.28 DEFAUL. 
 PsKM11=PsKM11_0*exp(c_c-dHa_c*1000/(R*(Tp+273.15)))/272.38;
-PsKM12=PsKM12_0*exp(c_o-dHa_o*1000/(R*(Tp+273.15)))/165.82;
+PsKM12=PsKM12_0*exp(c_o-dHa_o*1000/(R*(Tp+273.15)))/165.82;%*2.0;
 PsKM13	=	0.02;		% 	RuBP	1	RuBP+CO2->2PGA
 PsKI11    =   0.84   ;    % PGA  
 PsKI12    =0.04   ;       % FBP
@@ -374,14 +374,14 @@ Q10_58=2;
 % k1 = -3E-05;k2 = 0.0013;k3=0.0106;k4=0.8839;
 Ru_Act = k1*Tp^3 + k2*Tp^2 - k3*Tp + k4;%Rubisco activition state
 scaler = 1.5^((Tp-25)/10);
-if Tp<250
+if Tp>25
 scaler1 = c1;
 scaler2 = c2;
 scaler3 = c3;
 else
-scaler1 = 1;
-scaler2 = 1;
-scaler3 = 1;
+scaler1 = 0.83;
+scaler2 = 0.01;
+scaler3 = 1.37;
 end
 PsV1 =PsV1_0*Ru_Act*Q10_1^((Tp-25)/10)*scaler1;
 PsV2 =PsV2_0*Q10_2^((Tp-25)/10);%*scaler*scaler1;
