@@ -18,6 +18,9 @@ global EnzymeAct;
 EnzymeAct=Einput(1:27)/30;%unit change
 EnzymeAct(1) = EnzymeAct(1) * alpha1;
 EnzymeAct(2:11) = EnzymeAct(2:11) * alpha2;
+%Yufeng: test FBP/SBPase overexpression
+EnzymeAct(5) = EnzymeAct(5) * 1; %V6:FBPase
+EnzymeAct(8) = EnzymeAct(8) * 1; %V9:SBPase
 global Jmax;
 Jmax=EnzymeAct(27);
 global BFVmax;
