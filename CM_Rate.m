@@ -374,15 +374,9 @@ Q10_58=2;
 % k1 = -3E-05;k2 = 0.0013;k3=0.0106;k4=0.8839;
 Ru_Act = k1*Tp^3 + k2*Tp^2 - k3*Tp + k4;%Rubisco activition state
 scaler = 1.5^((Tp-25)/10);
-if Tp>25
 scaler1 = c1;
 scaler2 = c2;
 scaler3 = c3;
-else
-scaler1 = 0.83;
-scaler2 = 0.01;
-scaler3 = 1.37;
-end
 PsV1 =PsV1_0*Ru_Act*Q10_1^((Tp-25)/10)*scaler1;
 PsV2 =PsV2_0*Q10_2^((Tp-25)/10);%*scaler*scaler1;
 PsV3 =PsV3_0*Q10_3^((Tp-25)/10);%*scaler*scaler1;
