@@ -165,20 +165,31 @@ global SUCS_TIME_N;
 global SUCS_VEL;
 global SUCS_CON;
 
+
+%these numbers are from C.Bernacchi's thesis Table 3.1 
 R=8.314;
 c_c=38.28;
 dHa_c=80.99;
 c_o=14.68;
 dHa_o=23.72;
 % 
+%from BioCro's Farquhar
+R=8.31446261815324E-3;
+LeafTemperatureKelvin = Tp + 273.15;
+ko_25 = exp(20.30 - 36.38 ./ (R * (25+273.15)));
+kc_25 = exp(38.05 - 79.43 ./ (R * (25+273.15)));
+Ko_biocro = exp(20.30 - 36.38 ./ (R * LeafTemperatureKelvin))/ko_25;
+Kc_biocro = exp(38.05 - 79.43 ./ (R * LeafTemperatureKelvin))/kc_25;
 % First the physical and chemical constant for all the reactions
 
 %PsKM11_0	=	0.0115;		% 	CO2	1	RuBP+CO2->2PGA
 %%%%%%%%%%soy
 PsKM11_0	=	0.0097;
 PsKM12_0	=	0.244;		%	O2	1	RuBP+CO2->2PGA  0.28 DEFAUL. 
-PsKM11=PsKM11_0*exp(c_c-dHa_c*1000/(R*(Tp+273.15)))/272.38;
-PsKM12=PsKM12_0*exp(c_o-dHa_o*1000/(R*(Tp+273.15)))/165.82;%*2.0;
+% PsKM11      =   PsKM11_0*exp(c_c-dHa_c*1000/(R*(Tp+273.15)))/272.38;  %here the denominator is just a scaling factor of kc at 25 C
+% PsKM12      =   PsKM12_0*exp(c_o-dHa_o*1000/(R*(Tp+273.15)))/165.82;
+PsKM11   = PsKM11_0 * Kc_biocro;
+PsKM12   = PsKM12_0 * Ko_biocro;
 PsKM13	=	0.02;		% 	RuBP	1	RuBP+CO2->2PGA
 PsKI11    =   0.84   ;    % PGA  
 PsKI12    =0.04   ;       % FBP
@@ -379,22 +390,22 @@ scaler1 = c1;
 scaler2 = c2;
 scaler3 = c3;
 PsV1  =PsV1_0*Ru_Act*Q10_1^((Tp-25)/10)*scaler1;
-PsV2  =PsV2_0*Q10_2^((Tp-25)/10)  *scaler1;
-PsV3  =PsV3_0*Q10_3^((Tp-25)/10)  *scaler1;
-PsV5  =PsV5_0*Q10_5^((Tp-25)/10)  *scaler1;
-PsV6  =PsV6_0*Q10_6^((Tp-25)/10)  *scaler1;
-PsV7  =PsV7_0*Q10_7^((Tp-25)/10)  *scaler1;
-PsV8  =PsV8_0*Q10_8^((Tp-25)/10)  *scaler1;
-PsV9  =PsV9_0*Q10_9^((Tp-25)/10)  *scaler1;
-PsV10 =PsV10_0*Q10_10^((Tp-25)/10)*scaler1;
-PsV13 =PsV13_0*Q10_13^((Tp-25)/10)*scaler1;
-PsV23 =PsV23_0*Q10_23^((Tp-25)/10)*scaler1;
-PrV112=PrV112_0*Q10_112^((Tp-25)/10)*scaler2;
-PrV113=PrV113_0*Q10_113^((Tp-25)/10)*scaler2;
-PrV121=PrV121_0*Q10_121^((Tp-25)/10)*scaler2;
-PrV122=PrV122_0*Q10_122^((Tp-25)/10)*scaler2;
-PrV123=PrV123_0*Q10_123^((Tp-25)/10)*scaler2;
-PrV124=PrV124_0*Q10_124^((Tp-25)/10)*scaler2;
+PsV2  =PsV2_0*Q10_2^((Tp-25)/10)    ;
+PsV3  =PsV3_0*Q10_3^((Tp-25)/10)    ;
+PsV5  =PsV5_0*Q10_5^((Tp-25)/10)    ;
+PsV6  =PsV6_0*Q10_6^((Tp-25)/10)    ;
+PsV7  =PsV7_0*Q10_7^((Tp-25)/10)    ;
+PsV8  =PsV8_0*Q10_8^((Tp-25)/10)    ;
+PsV9  =PsV9_0*Q10_9^((Tp-25)/10)    ;
+PsV10 =PsV10_0*Q10_10^((Tp-25)/10)  ;
+PsV13 =PsV13_0*Q10_13^((Tp-25)/10)  *scaler1;
+PsV23 =PsV23_0*Q10_23^((Tp-25)/10)  *scaler1;
+PrV112=PrV112_0*Q10_112^((Tp-25)/10);
+PrV113=PrV113_0*Q10_113^((Tp-25)/10);
+PrV121=PrV121_0*Q10_121^((Tp-25)/10);
+PrV122=PrV122_0*Q10_122^((Tp-25)/10);
+PrV123=PrV123_0*Q10_123^((Tp-25)/10);
+PrV124=PrV124_0*Q10_124^((Tp-25)/10);
 PrV131=PrV131_0*Q10_131^((Tp-25)/10)*scaler2;
 SUCSV51=SUCSV51_0*Q10_51^((Tp-25)/10)*scaler3;
 SUCSV52=SUCSV52_0*Q10_52^((Tp-25)/10)*scaler3;
