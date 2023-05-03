@@ -640,8 +640,8 @@ v9 = PsV9 * (SBP-Pi * S7P/PsKE9) /(SBP + PsKM9*(1+Pi/PsKI9));
 v10 = PsV10 * (GAP *S7P - Ri5P * Xu5P/PsKE10)/((GAP+PsKM102*(1+Xu5P/PsKM101+Ri5P/PsKM10))*(S7P+PsKM103));
 v13 = PsV13 * (ATP * Ru5P-ADP * RuBP/PsKE13)/((ATP*(1+ADP/PsKI134) + PsKM132*(1+ADP/PsKI135))*(Ru5P+PsKM131*(1+PGA/PsKI131+RuBP/PsKI132+Pi/PsKI133)));
 
-
-I2=LI*alfa*(1-fc)/2;
+%Yufeng:absorbed light should be calculated at the very beginning
+I2=LI;%*alfa*(1-fc)/2;
 
 J=(I2+Jmax-sqrt((I2+Jmax)^2-4*Theta*I2*Jmax))/(2*Theta);
 v16 = min(beta*J,PsV16* (ADP * Pi-ATP/PsKE16)/(PsKM161*PsKM162 * (1+ADP/PsKM161 + Pi/PsKM162 + ATP/PsKM163 + ADP * Pi /(PsKM161 * PsKM162))));

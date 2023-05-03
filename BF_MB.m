@@ -27,9 +27,8 @@
 function BF_mb = BF_Mb(t,BF_Con,BF_Param)
 %global GLight;
 global LI;
-global light_scaler;
 %fini = Condition (t);
-light = LI*30*light_scaler;
+light = LI*30;
 
 BF_Param(1) = light;
 

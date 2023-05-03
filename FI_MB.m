@@ -34,9 +34,8 @@ function FI_mb = FI_Mb(t,FI_Con,FI_Param)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %global GLight;
 global LI;
-global light_scaler;
 %fini = Condition (t);
-light = LI*30*light_scaler;
+light = LI*30;
 
 FI_Param(1) = light;
 
