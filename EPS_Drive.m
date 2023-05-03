@@ -37,16 +37,17 @@ Tp=Tempinput;
 
 
 %global Jmax;
-global alfa;
-global fc;
+%global alfa;
+%global fc;
 global Theta;
 global beta;
 %Jmax=0.180/30*1000;
 %alfa=0.85;
 %fc=0.15;
 %Theta=0.7;
-Theta=0.95;%Yufeng: match Farquhar Matlab
-beta=0.7519;
+PhotosynthesisTheta = 0.76;
+Theta= PhotosynthesisTheta + 0.01713 * Tp - 3.75 * Tp^2.0 / 10000.0;%Yufeng: match Farquhar Matlab
+beta = 0.7519;
 
 Begin = 1;
 global tglobal;     % The total running time

@@ -136,8 +136,8 @@ end
 end
 global LI;
 global Jmax;
-global alfa;
-global fc;
+%global alfa;
+%global fc;
 global Theta;
 global beta;
 
