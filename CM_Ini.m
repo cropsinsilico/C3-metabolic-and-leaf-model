@@ -173,7 +173,7 @@ if GP == 0
 	V10	=	EnzymeAct(9);
 	V13	=	EnzymeAct(10);
 	V23	=	EnzymeAct(11);
-    V16 =   EnzymeAct(12); 
+        V16     =   EnzymeAct(12); 
 end
 V31		=	3.73/3;   % 1.05 *SC  *1.0 ;	%	(Lilley, Chon, Mosbach & Heldt, 1977b)	31	Phosphate translocator	DHAPi<->DHAPo   1.05 defulat
 V32		=	3.73/3;   %1.05 *SC *1.0;	    %	(Lilley et al., 1977b)	32	Phosphate translocator	PGAi<->PGAo 1.05 default

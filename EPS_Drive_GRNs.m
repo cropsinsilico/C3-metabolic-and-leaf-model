@@ -3,8 +3,6 @@ global GRNC;
 global GRNT;
 global pcfactor;
 global alpha1 alpha2;
-% alpha1 = 0.87;
-% alpha2 = 1.325;
 
 GRN_data=input1*pcfactor;
 
@@ -15,8 +13,10 @@ GRNC = Gc;
 GRNT = GT;
 
 global EnzymeAct;
-EnzymeAct=Einput(1:27)/30;%unit change
+EnzymeAct    = Einput(1:27)/30;%unit change
 EnzymeAct(1) = EnzymeAct(1) * alpha1;
+%This is part of scaling on the electron transport
+%A few others are in CM_Rate.m
 EnzymeAct(2:11) = EnzymeAct(2:11) * alpha2;
 %Yufeng: test FBP/SBPase overexpression
 EnzymeAct(5) = EnzymeAct(5) * 1; %V6:FBPase
