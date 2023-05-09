@@ -1,4 +1,4 @@
-function Arate=EPS_Drive_GRNs(input1,CO2i,PPFDi,Tempi,Gc,GT,Einput,k1,k2,k3,k4,c1,c2,c3,sens_para_vec)
+function Arate=EPS_Drive_GRNs_LHSPRCC(input1,CO2i,PPFDi,Tempi,Gc,GT,Einput,k1,k2,k3,k4,c1,c2,c3,sens_para_vec)
 global GRNC;
 global GRNT;
 global pcfactor;
