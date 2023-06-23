@@ -1,4 +1,4 @@
-function Arate=EPS_Drive_GRNs(input1,CO2i,PPFDi,Tempi,Gc,GT,Einput,k1,k2,k3,k4,c1,c2,c3)
+function Arate=EPS_Drive_GRNs(input1,CO2i,PPFDi,Tempi,Gc,GT,Einput,k1,k2,k3,k4,c1,c2,c3,alpha3)
 global GRNC;
 global GRNT;
 global pcfactor;
@@ -19,8 +19,9 @@ EnzymeAct(1) = EnzymeAct(1) * alpha1;
 %A few others are in CM_Rate.m
 EnzymeAct(2:11) = EnzymeAct(2:11) * alpha2;
 %Yufeng: test FBP/SBPase overexpression
-EnzymeAct(5) = EnzymeAct(5) * 1; %V6:FBPase
-EnzymeAct(8) = EnzymeAct(8) * 1; %V9:SBPase
+EnzymeAct(4) = EnzymeAct(4) * alpha3; %V5:Aldolase
+EnzymeAct(5) = EnzymeAct(5) * alpha3; %V6:FBPase
+EnzymeAct(8) = EnzymeAct(8) * alpha3; %V9:SBPase
 global Jmax;
 Jmax=EnzymeAct(27);
 global BFVmax;
