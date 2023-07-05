@@ -143,5 +143,7 @@ CO2A = zeros(5,1);
     global AVR;
     [row,col]=size(PS_VEL);
     Arate=(PS_VEL(2,col)-PR_VEL(col,9))*AVR;
-    PhotosynthesisRate=Arate;
+    PhotosynthesisRate.A = Arate;
+    PhotosynthesisRate.Carbox = PS_VEL(2,col);
+    PhotosynthesisRate.PR= PR_VEL(col,9)*AVR;
 end
