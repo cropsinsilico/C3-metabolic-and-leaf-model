@@ -146,4 +146,5 @@ CO2A = zeros(5,1);
     PhotosynthesisRate.A = Arate;
     PhotosynthesisRate.Carbox = PS_VEL(2,col);
     PhotosynthesisRate.PR= PR_VEL(col,9)*AVR;
+    PhotosynthesisRate.Concentration = Resultsmeta;  
 end
