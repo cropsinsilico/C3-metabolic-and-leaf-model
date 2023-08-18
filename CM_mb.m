@@ -116,7 +116,7 @@ tmp(15) = v1in  - v113;
 tmp(16) =  v112 - v2out;
 % PgCa 
 tmp(17) = v111 - v112;
-% Gcac 
+% Gcac:GCA cytosol 
 tmp(18) = v2out - v121;
 % Goac
 tmp(19) = v121 - v122- v124;
@@ -124,7 +124,7 @@ tmp(19) = v121 - v122- v124;
 tmp(20) = v131 - v122;
 % Glyc 
 tmp(21) = v122 + v124 - 2*v131;
-% Hprc 
+% Hprc: HPR cytosol 
 tmp(22) = v122 - v123;
 % Gceac 
 tmp(23) = v123 - v1in;

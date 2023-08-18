@@ -50,7 +50,7 @@ SUCS_Pool	(	1	)	=	ATc;
 SUCS_Pool	(	2	)	=	UTc;
 SUCS_Pool	(	3	)	=	PTc;
 
-RuBP	= 2.000;
+RuBP	= 2.000; %mmol l-1
 PGA	    =2.400;
 DPGA	=0.0011;
 T3P	    =0.5;
