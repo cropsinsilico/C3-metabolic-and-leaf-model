@@ -619,7 +619,7 @@ V1Reg = 1+PGA/PsKI11+FBP/PsKI12+SBP/PsKI13 + Pi/PsKI14+NADPH/PsKI15;
 if RUBISCOMETHOD ==2
     tmp = PsV1 * RuBP/(RuBP+PsKM13*V1Reg);
     v1 = tmp*CO2/(CO2+PsKM11*(1+O2/PsKM12));
-   if RuBP<PsV1/2
+    if RuBP<PsV1/2 %2 is Rubisco Catalytic number (s-1)
         v1 = v1 * RuBP/(PsV1/2);
     end
 
@@ -869,8 +869,8 @@ if RUBISCOMETHOD ==2            % Using michelies and enzyme information
     end
     v111 = PrV111t * O/(O+PrKO*(1+C/PrKC));
 
-    if Rubp < RUBISCOTOTAL
-        v111 = v111 * Rubp/RUBISCOTOTAL;
+    if Rubp < PsV1/2 
+        v111 = v111 * Rubp/(PsV1/2);
     end
     
 elseif RUBISCOMETHOD==1
