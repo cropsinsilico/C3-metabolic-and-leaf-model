@@ -28,7 +28,7 @@ function BF_mb = BF_Mb(t,BF_Con,BF_Param)
 %global GLight;
 global LI;
 %fini = Condition (t);
-light = LI*30;
+light = LI*30; %mmol L-1 to micromol m-2 s-1
 
 BF_Param(1) = light;
 

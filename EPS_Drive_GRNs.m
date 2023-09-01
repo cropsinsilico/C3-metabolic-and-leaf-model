@@ -19,9 +19,11 @@ EnzymeAct(1) = EnzymeAct(1) * alpha1;
 %A few others are in CM_Rate.m
 EnzymeAct(2:11) = EnzymeAct(2:11) * alpha2;
 %Yufeng: test FBP/SBPase overexpression
-EnzymeAct(4) = EnzymeAct(4) * alpha3; %V5:Aldolase
-EnzymeAct(5) = EnzymeAct(5) * alpha3; %V6:FBPase
-EnzymeAct(8) = EnzymeAct(8) * alpha3; %V9:SBPase
+%EnzymeAct(4) = EnzymeAct(4) * alpha3; %V5:Aldolase
+%EnzymeAct(5) = EnzymeAct(5) * alpha3; %V6:FBPase
+%EnzymeAct(8) = EnzymeAct(8) * alpha3; %V9:SBPase
+EnzymeAct(2)  = EnzymeAct(2) * alpha3; %V2
+EnzymeAct(10) = EnzymeAct(10) * alpha3; %V13
 global Jmax;
 Jmax=EnzymeAct(27);
 global BFVmax;
